@@ -45,7 +45,7 @@ client.on('message', async message =>
 
 client.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
-        return channel.send('Bienvenue sur **communauté | Baldark, Six Ranger & KelenS** !!! =)' + member.displayName);
+        return channel.send(' Bienvenue sur **communauté | Baldark, Six Ranger & KelenS** !!! =) ' + member.displayName);
     });
 });
 
