@@ -250,7 +250,10 @@ client.on("message", message =>
 {
     if(message.content ===",say")
     {
-        message.channel.sendMessage(` Cette commande est actuellement en maintenance pour une durée indéterminer, désolé `);
+        let text = args.join(" ");
+        message.delete();
+        message.channel.send(text);
+
         console.log("Une personne vient de faire la commande suivante : ,say !!!")
     }
 });
