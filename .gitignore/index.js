@@ -278,7 +278,7 @@ client.on("message", message => {
     }
 });
 
-client.on("message", message => 
+client.on("command", command => 
 {
     if(command === `${prefix}report`)
     {
@@ -303,7 +303,7 @@ client.on("message", message =>
 
         message.delete();
         reportChannel.send(reportEmbed);
-        
+
         console.log("Une personne vient de faire la commande suivante : ,report !!!")
     }
 });
