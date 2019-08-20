@@ -295,7 +295,7 @@ bot.on("message", (message) => {
         - channel.guild.roles = rôles sur le serveur
     */
     
-    if(message.content.substring(0, 7) == ",report")
+    if(message.content === ",report")
     {
         var commande = message.content.split(" ");
         
