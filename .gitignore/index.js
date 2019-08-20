@@ -295,10 +295,8 @@ client.on("message", message =>
             .addField("L'heure", message.createAt)
             .addField("Raison", reason);
 
-        let reportschannel = message.guild.channels.find('name', "reports");
-
         message.delete();
-        reportschannel.send(embed);
+        client.guilds.get("613340625584259091").channels.get("613375849181216782").send(embed);
 
         return;
         console.log("Une personne vient de faire la commande suivante : ,report !!!")
