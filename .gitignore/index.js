@@ -268,7 +268,7 @@ client.on("message", message => {
             .addField(',clear', 'Supprime certains message')
             .addField(',site', `Montre l'URL du site officiel du serveur`)
             .addField(',kick', 'Expulse les personnes')
-            .addField(',serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS');
+            .addField(',serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS')
             .addField(',service', `Explique ce qu'est exactement Hydaria`);
     
         return message.channel.send(embed);
