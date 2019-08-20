@@ -23,8 +23,10 @@ client.on("message", (message) =>
 client.on('ready', async () => 
 {
     console.log(` ${client.user.username} est en ligne !!! `);
-    client.user.setActivity(" ,help | Membres : ${client.users.size} ", {type: "CALCULE"});
-    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' **```diff -Redémarrage réussi avec succès```** !!! ')
+    client.user.setActivity( `,help | Membres : ${client.users.size}` );
+    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(` **```diff
+    -Redémarrage réussi avec succès
+    ```** !!! `)
     client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Prêt à vous servir avec toutes mes fonctionnalités. Commence par faire ,help !!! :desktop: ')
 });
 
