@@ -23,8 +23,8 @@ client.on("message", (message) =>
 client.on('ready', async () => 
 {
     console.log(` ${client.user.username} est en ligne !!! `);
-    client.user.setActivity(` ,help | Membres : ${client.users.size} `, {type: "CALCULE"});
-    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Redémarrage réussi avec succès !!! ')
+    client.user.setActivity(" ,help | Membres : ${client.users.size} ", {type: "CALCULE"});
+    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' **```diff -Redémarrage réussi avec succès```** !!! ')
     client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Prêt à vous servir avec toutes mes fonctionnalités. Commence par faire ,help !!! :desktop: ')
 });
 
@@ -89,7 +89,7 @@ client.on('message' , message =>
 
 client.on('message', message => {
     if (message.content === "con") {
-        message.bulkDelete();
+        message.delete();
         message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
     }
 
@@ -278,7 +278,33 @@ client.on("message", message => {
     }
 });
 
+client.on("message", message => 
+{
+    if(message.content ===",report")
+    {
+        let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!rUser) return message.channel.send("Couldn't find user.");
+        let reason = args.join(" ").slice(22);
 
+        let reportEmbed = new Discord.RichEmbed()
+        .setDescription("Reports")
+        .setColor("#15f153")
+        .addField("Personnes report", `${rUser} with ID: ${rUser.id}`)
+        .addField("Report par", `${message.author} with ID: ${message.author.id}`)
+        .addField("Channel", message.channel)
+        .addField("L'heure", message.createAt)
+        .addField("Raison", reason);
+
+        let reportschannel = message.guild.channels.find('name', "reports");
+        if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+
+        message.delete().catch(O_o=>{});
+        reportschannel.send(reportEmbed);
+
+        return;
+        console.log("Une personne vient de faire la commande suivante : ,report !!!")
+    }
+});
 
 client.on("message", message => 
 {
