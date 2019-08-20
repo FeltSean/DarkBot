@@ -24,12 +24,12 @@ client.on('ready', async () =>
 {
     console.log(` ${client.user.username} est en ligne !!! `);
     client.user.setActivity(` ,help | Membres : ${client.users.size} `);
-    client.guilds.get("579222931616432128").channels.get("579230004316078081").send(' Prêt à vous servir avec toutes mes fonctionnalités. Commence par faire ,help !!! :desktop: ')
+    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Prêt à vous servir avec toutes mes fonctionnalités. Commence par faire ,help !!! :desktop: ')
 });
 
 client.on('ready', async () => 
 {
-    client.guilds.get("579222931616432128").channels.get("579230004316078081").send(' Mon créateur est KelenS. Voici son site internet : http://tenteaea.com/UbK et sa chaine YTB : https://www.youtube.com/channel/UC0iUyQ8oV57YKruLNlF127g/videos ')
+    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Mon créateur est KelenS. Voici son site internet : http://tenteaea.com/UbK et sa chaine YTB : https://www.youtube.com/channel/UC0iUyQ8oV57YKruLNlF127g/videos ')
 });
 
 client.on('message', async message => 
@@ -50,7 +50,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberAdd', member => {
-    const role = member.guild.roles.find("id", "579241953267286018")
+    const role = member.guild.roles.find("name", "abonné(e)s")
     member.addRole(role);
 });
 
@@ -67,11 +67,11 @@ client.on('guildMemberRemove', member => {
 
 client.on('guildMemberRemove', member => {
     member.guild.channels.find("name", "🎉╿arrivant-partant")
-    .send(` Aurevoir **${member}** =( !!! `)        
+    .send(` Dommage **${member}** est parti, j'espère qu'il reviendra =( !!! `)        
 });
 
 client.on("message", message => {
-    if (message.content === ("serverlist")) {
+    if (message.content === (",serverlist")) {
         message.channel.send(client.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
     }
 });
@@ -89,17 +89,142 @@ client.on('message' , message =>
 client.on('message', message => {
     if (message.content === "con") {
         message.bulkDelete();
-        message.author.send("Pas d'insulte s'il vous plait !!!")
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
     }
 
     if (message.content === "merde") {
         message.delete();
-        message.author.send("Pas d'insulte s'il vous plait !!!")
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
     }
 
     if (message.content === "pute") {
         message.delete();
-        message.author.send("Pas d'insulte s'il vous plait !!!")
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "pd") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "connard") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "connasse") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "salope") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "bite") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "baisable") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "baise") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "baiser ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "bander ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "branler ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "branlette ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "bordel ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "burnes ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "chatte ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "sexe ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "chiant ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "chiante ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "chiasse ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "chier ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "chiottes ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "conne ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "connerie ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "coucougnettes ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "couilles ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
+    }
+
+    if (message.content === "couillu ") {
+        message.delete();
+        message.author.send("Pas d'insulte s'il vous plait sinon vous serez sanctionner !!!")
     }
 });
 
@@ -122,19 +247,7 @@ client.on("message", message =>
 {
     if(message.content ===",say")
     {
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`Tu n'as pas le droit d'éxécuter cette commande !!!`)
-
-        let argsresult;
-        let mChannel = message.mentions.channels.first()
-
-        message.delete()
-        if(mChannel) {
-            argsresult = args.slice(1).join(" ")
-            mChannel.send(argsresult)
-        } else {
-            argsresult = args.join(" ")
-            message.channel.send(argsresult)
-        } 
+        message.channel.sendMessage(` Cette commande est actuellement en maintenance pour une durée indéterminer, désolé `);
         console.log("Une personne vient de faire la commande suivante : ,say !!!")
     }
 });
@@ -155,10 +268,23 @@ client.on("message", message => {
             .addField(',clear', 'Supprime certains message')
             .addField(',site', `Montre l'URL du site officiel du serveur`)
             .addField(',kick', 'Expulse les personnes')
-            .addField('serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS');
+            .addField(',serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS');
+            .addField(',service', `Explique ce qu'est exactement Hydaria`);
     
         return message.channel.send(embed);
         console.log(`${author} vient de faire la commande ,help !!!`)
+    }
+});
+
+client.on("message", message => 
+{
+    if(message.content ===",service")
+    {
+        message.channel.sendMessage(` Hydaria est une entreprise de développement de site internet, de bot discord et d'application. 
+            Elle est constituer de trois personnes pour le moment. Il y a @enzozanitchi123#2488, @KelenS-Developpeur#6535 et @TheGeek#8366. 
+            Vous pouvez également nous contacter facilement avec cette adresse mail : hydaria@hydaria.yj.fr 
+            et voir ce que l'on fait ici sur notre site: http://tenteaea.com/UbK. `);
+        console.log("Une personne vient de faire la commande suivante : ,service !!!")
     }
 });
 
