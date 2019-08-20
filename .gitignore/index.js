@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = ("&")
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOTKEN);
 
 process.setMaxListeners(Infinity);
 
@@ -29,7 +29,7 @@ client.on('ready', async () =>
 
 client.on('ready', async () => 
 {
-    client.guilds.get("579222931616432128").channels.get("579230004316078081").send(' Mon créateur est KelenS. Voici son site internet : https://hydaria.yj.fr et sa chaine YTB : https://www.youtube.com/channel/UC0iUyQ8oV57YKruLNlF127g/videos ')
+    client.guilds.get("579222931616432128").channels.get("579230004316078081").send(' Mon créateur est KelenS. Voici son site internet : http://tenteaea.com/UbK et sa chaine YTB : https://www.youtube.com/channel/UC0iUyQ8oV57YKruLNlF127g/videos ')
 });
 
 client.on('message', async message => 
@@ -45,7 +45,7 @@ client.on('message', async message =>
 
 client.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
-        return channel.send(' Bienvenue sur **communauté | Baldark, Six Ranger & KelenS** !!! =) ' + member.displayName);
+        return channel.send('Bienvenue sur **communauté | Baldark, Six Ranger & KelenS** !!! =)' + member.displayName);
     });
 });
 
@@ -56,7 +56,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberAdd', member => {
     member.guild.channels.find("name", "🎉╿arrivant-partant")
-    .send(` :tada: Bienvenue a toi **${member}** =) sur **HUB - Hydaria** !!! `)
+    .send(` :tada: Bienvenue a toi **${member}** =) sur **communauté | Baldark, Six Ranger & KelenS** !!! `)
 }); 
 
 client.on('guildMemberRemove', member => {
@@ -118,27 +118,6 @@ client.on("message", message =>
     };
 });
 
-client.on("message", message => 
-{
-    if(message.content ===",say")
-    {
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`Tu n'as pas le droit d'éxécuter cette commande !!!`)
-
-        let argsresult;
-        let mChannel = message.mentions.channels.first()
-
-        message.delete()
-        if(mChannel) {
-            argsresult = args.slice(1).join(" ")
-            mChannel.send(argsresult)
-        } else {
-            argsresult = args.join(" ")
-            message.channel.send(argsresult)
-        } 
-        console.log("Une personne vient de faire la commande suivante : ,say !!!")
-    }
-});
-
 client.on("message", message => {
     // Si la commande est &help //
     if (message.content === (",help")) {
@@ -150,12 +129,11 @@ client.on("message", message => {
             .addField('Nom du bot', client.user.username)
             .addField('Commandes', '---------------')
             .addField(',info', 'Renvoie des informations sur le bot')
-            .addField(',say', 'Fait une annonce')
             .addField(',baldark', `Montre l'ip du serveur`)
             .addField(',clear', 'Supprime certains message')
             .addField(',site', `Montre l'URL du site officiel du serveur`)
             .addField(',kick', 'Expulse les personnes')
-            .addField('serverlist', 'Enonce combien on est sur Hydaria');
+            .addField('serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS');
     
         return message.channel.send(embed);
         console.log(`${author} vient de faire la commande ,help !!!`)
@@ -178,7 +156,7 @@ client.on("message", message => {
     // Si la commande est &site //
     if (message.content === (",site")) {
         let embed = new Discord.RichEmbed()
-            .setDescription(' Voici le lien du site internet de mon créateur : https://hydaria.yj.fr/ !!! ')
+            .setDescription(' Voici le lien du site internet de mon créateur : communauté | Baldark, Six Ranger & KelenS !!! ')
             .setColor('#dc143c');
         return message.channel.send(embed);
         console.log(`${author} vient de faire la commande ,site !!!`)
