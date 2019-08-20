@@ -318,17 +318,14 @@ client.on("message", message =>
     }
 });
 
-client.on("message", message => {
-    // Si la commande est &clear //
-    if (message.content === (",clear")) {
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("oof.");
-        if(!args[0]) return message.channel.send("oof");
-        message.channel.bulkDelete(args[0]).then(() => {
-            message.channel.send(`Je viens de clear ${args[0]} pour vous !!!`).then(msg => msg.delete(5000));
-        });
-    
+client.on("message", message => 
+{
+    if(message.content ===",clear") 
+    {
+        message.channel.sendMessage("Cette commande est actuellement en maintenance car elle faisait crash le bot. On vous dira quand elle sera de retour. MERCI");
+        console.log("Une personne vient d'éxécuter la commande ,clear")
     }
-});
+})
 
 client.on("message", message => {
     // Si la commande est &site //
