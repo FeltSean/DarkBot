@@ -23,7 +23,8 @@ client.on("message", (message) =>
 client.on('ready', async () => 
 {
     console.log(` ${client.user.username} est en ligne !!! `);
-    client.user.setActivity(` ,help | Membres : ${client.users.size} `);
+    client.user.setActivity(` ,help | Membres : ${client.users.size} `, {type: "CALCULE"});
+    client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Redémarrage réussi avec succès !!! ')
     client.guilds.get("613340625584259091").channels.get("613343531297275904").send(' Prêt à vous servir avec toutes mes fonctionnalités. Commence par faire ,help !!! :desktop: ')
 });
 
@@ -269,12 +270,15 @@ client.on("message", message => {
             .addField(',site', `Montre l'URL du site officiel du serveur`)
             .addField(',kick', 'Expulse les personnes')
             .addField(',serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS')
+            .addField(',report', 'report un joueur')
             .addField(',service', `Explique ce qu'est exactement Hydaria`);
     
         return message.channel.send(embed);
         console.log(`${author} vient de faire la commande ,help !!!`)
     }
 });
+
+
 
 client.on("message", message => 
 {
