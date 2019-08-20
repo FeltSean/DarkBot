@@ -264,13 +264,13 @@ client.on("message", message => {
             .addField('Nom du bot', client.user.username)
             .addField('Commandes', '---------------')
             .addField(',info', 'Renvoie des informations sur le bot')
-            .addField(',say', 'Fait une annonce')
-            .addField(',baldark', `Montre l'ip du serveur`)
+            .addField(',say', 'Fait une annonce **[MAINTENANCE]**')
+            .addField(',baldark', `Montre la chaine de BalDark`)
             .addField(',clear', 'Supprime certains message')
-            .addField(',site', `Montre l'URL du site officiel du serveur`)
+            .addField(',site', `Montre l'URL du site officiel de Hydaria`)
             .addField(',kick', 'Expulse les personnes')
             .addField(',serverlist', 'Enonce combien on est sur communauté | Baldark, Six Ranger & KelenS')
-            .addField(',report', 'report un joueur')
+            .addField(',report', 'report un joueur **[MAINTENANCE]**')
             .addField(',service', `Explique ce qu'est exactement Hydaria`);
     
         return message.channel.send(embed);
