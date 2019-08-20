@@ -280,25 +280,30 @@ client.on("message", message => {
 
 client.on("message", message => 
 {
-    if(message.content === (",report"))
+    if(command === `${prefix}report`)
     {
-        let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!rUser) return message.channel.send("Couldn't find user.");
-        let reason = args.join(" ").slice(22);
+        let reportedUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if (!reportedUser) {
+            return message.channel.send("L'utilisateur n'existe pas.");
+        } 
+        let ReportedReason = args.join(" ").slice(22);
 
-        let embed = new Discord.RichEmbed()
+        let reportEmbed = new Discord.RichEmbed()
             .setDescription("Reports")
             .setColor("#15f153")
-            .addField("Personnes report", `${rUser} with ID: ${rUser.id}`)
-            .addField("Report par", `${message.author} with ID: ${message.author.id}`)
+            .addField("Utilisateurs reporté", `${reportedUser} (ID: ${reportedUser.id})`)
+            .addField("Utilisateur ayant reporté", `${message.author} (ID: ${message.author.id})`)
             .addField("Channel", message.channel)
-            .addField("L'heure", message.createAt)
-            .addField("Raison", reason);
+            .addField("Raison", reportedReason);
+
+        let reporChannel = message.guild.channels.find(`name`, "reports");
+        if (!reportChannel) {
+            return message.channel.send("Canal 'Reports' introuvable. Veuillez créer ce canal !")
+        }
 
         message.delete();
-        client.guilds.get("613340625584259091").channels.get("613375849181216782").send(embed);
-
-        return;
+        reportChannel.send(reportEmbed);
+        
         console.log("Une personne vient de faire la commande suivante : ,report !!!")
     }
 });
