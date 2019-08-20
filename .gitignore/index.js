@@ -278,9 +278,9 @@ client.on("message", message => {
     }
 });
 
-client.on("command", command => 
+client.on("message", message => 
 {
-    if(command === `${prefix}report`)
+    if(message.content === (",report"))
     {
         let reportedUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if (!reportedUser) {
