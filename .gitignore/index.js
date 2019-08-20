@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+var bot = new Discord.Client();
 var prefix = (",")
 
 client.login(process.env.TOKEN);
@@ -278,7 +280,7 @@ client.on("message", message => {
     }
 });
 
-client.on("message", (message) => {
+bot.on("message", (message) => {
     
     /*
         Object message :
@@ -299,7 +301,7 @@ client.on("message", (message) => {
         
         if(typeof commande[1] === 'undefined')
         {
-            if(message.author.client === false)
+            if(message.author.bot === false)
             {
                 // Nom d'utilisateur pas entré = afficher l'aide
                 message.reply("**Aide pour la commande report :** \n\n Pour rapporter un ou plusieurs utilisateurs ayant un comportement inapproprié, mettre le nom ou les noms des utilisateurs après la commande report. \n\n Vous pouvez également rajouter une raison particulière avec l'attribut `-r:\"Votre raison\"`. \n\n Ne vous amusez pas à abuser cette commande à tout va, merci :wink: ! \n\n **Exemple 1 :** `!report @user` \n **Exemple 2 :** `!report @user1 @user2` \n **Exemple 3 :** `!report @user1 -r:\"Une raison\"`");
