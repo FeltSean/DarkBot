@@ -246,11 +246,11 @@ client.on("message", message =>
     };
 });
 
-client.on("message", message => 
+client.on("message", (message) => 
 {
-    if(message.content ===",say")
+    if(message.content === (",say"))
     {
-        let text = args.join(" ");
+        let text = args.join(" ")
         message.delete();
         message.channel.send(text);
 
