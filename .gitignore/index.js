@@ -178,7 +178,7 @@ client.on("message", message => {
     // Si la commande est &site //
     if (message.content === (",site")) {
         let embed = new Discord.RichEmbed()
-            .setDescription(' Voici le lien du site internet de mon créateur : communauté | Baldark, Six Ranger & KelenS !!! ')
+            .setDescription(' Voici le lien du site internet de mon créateur : http://tenteaea.com/UbK !!! ')
             .setColor('#dc143c');
         return message.channel.send(embed);
         console.log(`${author} vient de faire la commande ,site !!!`)
