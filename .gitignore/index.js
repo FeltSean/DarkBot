@@ -280,10 +280,10 @@ client.on("message", message =>
 {
     if(message.content ===",service")
     {
-        message.channel.sendMessage(` Hydaria est une entreprise de développement de site internet, de bot discord et d'application. 
+        message.channel.sendMessage(` 
+               Hydaria est une entreprise de développement de site internet, de bot discord et d'application. 
             Elle est constituer de trois personnes pour le moment. Il y a @enzozanitchi123#2488, @KelenS-Developpeur#6535 et @TheGeek#8366. 
-            Vous pouvez également nous contacter facilement avec cette adresse mail : hydaria@hydaria.yj.fr 
-            et voir ce que l'on fait ici sur notre site: http://tenteaea.com/UbK. `);
+            Vous pouvez également nous contacter facilement avec cette adresse mail : hydaria@hydaria.yj.fr et voir ce que l'on fait ici sur notre site: http://tenteaea.com/UbK. `);
         console.log("Une personne vient de faire la commande suivante : ,service !!!")
     }
 });
