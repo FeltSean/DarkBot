@@ -286,20 +286,19 @@ client.on("message", message =>
         if(!rUser) return message.channel.send("Couldn't find user.");
         let reason = args.join(" ").slice(22);
 
-        let reportEmbed = new Discord.RichEmbed()
-        .setDescription("Reports")
-        .setColor("#15f153")
-        .addField("Personnes report", `${rUser} with ID: ${rUser.id}`)
-        .addField("Report par", `${message.author} with ID: ${message.author.id}`)
-        .addField("Channel", message.channel)
-        .addField("L'heure", message.createAt)
-        .addField("Raison", reason);
+        let embed = new Discord.RichEmbed()
+            .setDescription("Reports")
+            .setColor("#15f153")
+            .addField("Personnes report", `${rUser} with ID: ${rUser.id}`)
+            .addField("Report par", `${message.author} with ID: ${message.author.id}`)
+            .addField("Channel", message.channel)
+            .addField("L'heure", message.createAt)
+            .addField("Raison", reason);
 
         let reportschannel = message.guild.channels.find('name', "reports");
-        if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
         message.delete();
-        reportschannel.send(reportEmbed);
+        reportschannel.send(embed);
 
         return;
         console.log("Une personne vient de faire la commande suivante : ,report !!!")
