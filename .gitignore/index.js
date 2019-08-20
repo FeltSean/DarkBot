@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = ("&")
+var prefix = (",")
 
-client.login(process.env.TOTKEN);
+client.login(process.env.TOKEN);
 
 process.setMaxListeners(Infinity);
 
@@ -118,6 +118,27 @@ client.on("message", message =>
     };
 });
 
+client.on("message", message => 
+{
+    if(message.content ===",say")
+    {
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`Tu n'as pas le droit d'éxécuter cette commande !!!`)
+
+        let argsresult;
+        let mChannel = message.mentions.channels.first()
+
+        message.delete()
+        if(mChannel) {
+            argsresult = args.slice(1).join(" ")
+            mChannel.send(argsresult)
+        } else {
+            argsresult = args.join(" ")
+            message.channel.send(argsresult)
+        } 
+        console.log("Une personne vient de faire la commande suivante : ,say !!!")
+    }
+});
+
 client.on("message", message => {
     // Si la commande est &help //
     if (message.content === (",help")) {
@@ -129,6 +150,7 @@ client.on("message", message => {
             .addField('Nom du bot', client.user.username)
             .addField('Commandes', '---------------')
             .addField(',info', 'Renvoie des informations sur le bot')
+            .addField(',say', 'Fait une annonce')
             .addField(',baldark', `Montre l'ip du serveur`)
             .addField(',clear', 'Supprime certains message')
             .addField(',site', `Montre l'URL du site officiel du serveur`)
